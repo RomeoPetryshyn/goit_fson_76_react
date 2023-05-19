@@ -1,0 +1,19 @@
+.product_details_container {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .heading {
+        color: red;
+    }
+    .name {
+        color: black;
+    }
+    .type {
+        color: green;
+    }
+    .price {
+        color: blue;
+    }
+}

@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.is-active {
+    background-color: blue;
+}
+
+.test {
+    font-size: 50px;
+}
+
+@media (max-width: 1250px) {
+    .container {
+        font-size: 50px;
+    }
+}
+
+.title {
+    color: red;
+}
+
+.navigation {
+    color: blue;
+}

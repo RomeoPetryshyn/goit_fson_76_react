@@ -1,0 +1,15 @@
+.error {
+    margin: 8px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background-color: gray;
+    color: black;
+  }
+  
+.warning {
+    margin: 8px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    color: black;
+    background-color: orange;
+}
