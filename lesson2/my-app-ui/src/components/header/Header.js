@@ -1,7 +1,7 @@
 import './Header.css';
 import clsx from 'clsx';
 
-function Header() {
+function Header(props) {
     const isActive = false;
     // clsx('foo', true && 'bar', 'baz');
 
