@@ -30,3 +30,47 @@ function weirdRandomNumGenerator() {
     randString+=num;
     return randString;
 }
+
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+useEffect(() => {
+    const fetchData = async () => {
+        const url = `https://pixabay.com/api/?q=${encodeURIComponent(
+            searchQuery
+        )}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`;
+      
+        try {
+            setLoading(true);
+      
+            const response = await axios.get(url);
+            const { hits } = response.data;
+      
+            setImages(prevImages => [...prevImages, ...hits]);
+            setPage(prevPage => prevPage + 1);
+        } catch (error) {
+            if (error.response) {
+              setError('Error while fetching images.');
+            } else if (error.request) {
+              setError('Network error. Please check your internet connection.');
+            } else {
+              setError('An unexpected error occurred. Please try again later.');
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []); 
+
+
+
+// function fetchImages() {
+    //     // doing something
+    // }; - NO
+
+    // const fetchImages = React.useCallback(() => {
+    //     // ваш код
+    // }, []);
