@@ -75,17 +75,3 @@ cd lesson11 && cd my-app-ui && npm install - з терміналу щоб поч
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
