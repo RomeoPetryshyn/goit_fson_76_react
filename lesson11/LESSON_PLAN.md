@@ -1,3 +1,5 @@
+cd lesson11 && cd my-app-ui && npm install - з терміналу щоб почати роботу з прикладами в цьому уроці
+
 ## План заняття
 
 1. Kahoot i питання.
@@ -87,16 +89,3 @@
 
 
 
-
-
-
-
-
-import { combineReducers } from 'redux';
-export default (state, action) => {
-    return appReducer(state, action);
-};
-const appReducer = combineReducers({
-    colorThemes: colorThemesReducer,
-    somethingElse: somethingElseReducer,
-});
