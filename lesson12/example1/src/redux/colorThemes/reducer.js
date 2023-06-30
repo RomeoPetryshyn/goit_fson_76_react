@@ -1,5 +1,5 @@
-import { setColorTheme } from "./actions";
 import { createReducer } from "@reduxjs/toolkit";
+import { setColorTheme } from "./actions";
 
 const defaultState = {
     colorTheme: 'light'
@@ -7,8 +7,7 @@ const defaultState = {
 
 export const colorThemesReducer = createReducer(defaultState, {
     [setColorTheme]: (state, action) => ({
-            ...state,
-            colorTheme: action.payload,
+          ...state,
+          colorTheme: action.payload,
     })
 });
-    

@@ -28,6 +28,7 @@
       6. Додамо селектор для отримання нашого глобального стану
             export const getColorTheme = state => state.themes.colorTheme;
       7. Оновимо компоненти Header, Footer, Content для роботи з нашим глобальним станом і його зміною.
+      8. Спробуємо все переробити через slice
       
 
    
