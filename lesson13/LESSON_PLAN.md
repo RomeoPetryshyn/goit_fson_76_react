@@ -23,7 +23,7 @@
          }, [dispatch]);
 5. Спробуємо переналаштувати все використовуючи createAsyncThunk (перед тим розглянувши що це таке)
    1. Перепишемо наші operations з використанням createAsyncThunk (example)
-   2. Перепишемо наш slice з використанням нових operations
+   2. Перепишемо наш slice з використанням нових operations (example)
       
 
    
