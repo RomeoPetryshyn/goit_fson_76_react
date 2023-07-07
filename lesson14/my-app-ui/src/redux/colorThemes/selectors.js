@@ -1,0 +1,1 @@
+export const selectColorTheme = state => state.themes.colorTheme;

@@ -13,6 +13,9 @@ const productsSlice = createSlice({
         { name: 'Banana', price: 45, type: 'fruit', origin: 'IT', amount: 7 },
         { name: 'Dragon fruit', price: 35, type: 'fruit', origin: 'FR', amount: 14 },
         { name: 'Lime', price: 32, type: 'fruit', origin: 'SP', amount: 20 },
+        { name: 'Strawberry', price: 30, type: 'fruit', origin: 'UA', amount: 18 },
+        { name: 'Grape', price: 20, type: 'fruit', origin: 'UA', amount: 3 },
+        { name: 'Rasberry', price: 13, type: 'fruit', origin: 'UA', amount: 1 },
     ],
     reducers: {
         addProduct(state, action) {

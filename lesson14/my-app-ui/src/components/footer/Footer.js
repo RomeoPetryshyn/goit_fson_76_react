@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
+import { selectColorTheme } from "../../redux/colorThemes/selectors";
 
 function Footer() {
-    const colorScheme = useSelector(state => state.themes.colorTheme);
+    const colorScheme = useSelector(selectColorTheme);
     const style = {
         width: 400,
         height: 100,
