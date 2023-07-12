@@ -1,3 +1,5 @@
+ПЕРЕРВА ДО 20:23
+
 ## План заняття
 
 1. Питання.
@@ -25,4 +27,5 @@
          import { logIn } from '../../redux/auth/operations';
          import { register } from '../../redux/auth/operations';
 
+// jakeJackson12345@test.com
 

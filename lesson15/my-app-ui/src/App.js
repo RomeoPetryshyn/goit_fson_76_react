@@ -4,20 +4,14 @@ import AuthPage from './pages/authPage/AuthPage';
 
 function App() {
   const {
-    isLoggedIn,
-    user
+    isLoggedIn
   } = useAuth();
 
-  if (!isLoggedIn) {
-    return <AuthPage/>
+  if (isLoggedIn) {
+    return <Content />
+  } else {
+    return <AuthPage />
   }
-
-  return (
-    <div>
-      Welcome {user.name}
-      <Content/>
-    </div>
-  );
 }
 
 export default App;
