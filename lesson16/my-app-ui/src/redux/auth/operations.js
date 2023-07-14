@@ -4,8 +4,12 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 axios.defaults.baseURL = 'https://goit-task-manager.herokuapp.com/';
 
 const setAuthHeader = token => {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
+
+const clearAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = '';
+}
 
 export const register = createAsyncThunk(
     'auth/register',
@@ -34,6 +38,16 @@ export const logIn = createAsyncThunk(
       }
     }
 );
+
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
+  try {
+    await axios.post('/users/logout');
+    // After a successful logout, remove the token from the HTTP header
+    clearAuthHeader();
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
 
 export const refreshUser = createAsyncThunk(
   'auth/refresh',

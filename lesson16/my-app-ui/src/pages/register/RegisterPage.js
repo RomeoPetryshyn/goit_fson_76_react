@@ -1,31 +1,30 @@
-import { useDispatch } from "react-redux";
-import { useAuth } from "../../hooks";
-import { register } from "../../redux/auth/operations";
-import { useState, useEffect } from "react";
-import PasswordStrengthBar from 'react-password-strength-bar';
+import { useState } from "react";
+import { useAuth } from "../../hooks/index";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/auth/operations";
+import PasswordStrengthBar from 'react-password-strength-bar';
 
 function RegisterPage() {
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
-
-    const { isAuthError, isLoggedIn } = useAuth();
-    
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    useEffect(() => {
-        if (isLoggedIn) {
-            navigate('/');
-        }
-    }, [isLoggedIn]);
+    const { isAuthError } = useAuth();
 
-    const handleSignup = () => dispatch(register({ email, password, name }));
-    
+    const handleLoginNavigate = () => {
+        navigate('/login');
+    };
+
+    const handleRegister = () => {
+        dispatch(register({ email, password, name }));
+    };
+
     return (
         <div style={{margin: 50}}>
-            <div>Sign up</div>
+            <div>Register</div>
             <input 
                 type="text" 
                 placeholder="Please enter your name"
@@ -45,11 +44,11 @@ function RegisterPage() {
                 onChange={(event) => setPassword(event.target.value)}
             /> <br/>
             <div style={{width: 150}}><PasswordStrengthBar password={password} /></div>
-            {isAuthError && <div>Error occured during signup. Email or Password is incorrect</div>}
-            <button onClick={handleSignup}>Sign up</button> <br/> <br/>
-            <button onClick={() => navigate('/login')}>Go to login!</button>
+            {isAuthError && <div>Error occurred while register</div>} <br />
+            <button onClick={handleRegister}>Register</button> <br />
+            <button onClick={handleLoginNavigate}>Go to login page</button>
         </div>
-    );
+    )
 }
 
 export default RegisterPage;

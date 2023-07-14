@@ -20,16 +20,13 @@ const middleware = [
   }),
 ];
 
-// Persisting token field from auth slice to localstorage
-const authPersistConfig = {
-  key: 'auth',
-  storage,
-  whitelist: ['token'],
-};
-
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, authReducer),
+    auth: persistReducer({
+        key: 'auth',
+        storage,
+        whitelist: ['token'],
+    }, authReducer),
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
